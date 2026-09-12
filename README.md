@@ -33,7 +33,8 @@ Notes and limits:
 - Keep the login strong: the password gate is the whole security model for a desktop with sudo.
 - Only `/config` (the home directory) persists. Packages installed with `apt` live outside it and are gone after a redeploy; reinstall them or keep a setup script in your home.
 - Rendering is CPU-based (no GPU on Railway). Fine for desktop apps and light video; not for 3D or heavy media work.
-- Give the service 2 GB of RAM or more. A desktop plus a browser is memory-hungry.
+- Idle footprint is about 250 MB, so it boots fine on the 512 MB Trial plan. Give it 1-2 GB if you run a browser or an IDE inside.
+- The virtual screen is capped at 4K (`MAX_RES=3840x2160`); the desktop still resizes to your browser window. Raising the cap costs RAM: the upstream default of 15360x8640 needs ~600 MB for the framebuffer alone.
 - No Docker daemon inside the desktop.
 - Looking for just a browser? The same author publishes [Chromium](https://railway.com/deploy/chromium), [Google Chrome](https://railway.com/deploy/google-chrome), [Firefox](https://railway.com/deploy/firefox-browser), [Brave](https://railway.com/deploy/brave-browser) and [Microsoft Edge](https://railway.com/deploy/microsoft-edge) templates.
 
