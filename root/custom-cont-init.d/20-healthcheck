@@ -1,9 +1,11 @@
 #!/bin/bash
 # Add an unauthenticated /healthcheck for Railway. init-nginx regenerates the
 # live config from /defaults/default.conf at boot and enables basic auth on
-# everything when PASSWORD is set — patch both files so init order is moot.
-for F in /defaults/default.conf /etc/nginx/sites-available/default; do
+# everything when PASSWORD is set — patch every copy so init order is moot
+# (Ubuntu bases use sites-available, Arch/Fedora use conf.d, Alpine uses http.d).
+# awk, not sed: Alpine's busybox sed lacks the GNU `0,/re/` first-match address.
+for F in /defaults/default.conf /etc/nginx/sites-available/default /etc/nginx/conf.d/default.conf /etc/nginx/http.d/default.conf; do
   [[ -f "$F" ]] || continue
-  grep -q '/healthcheck' "$F" || \
-    sed -i '0,/^  location /s//  location = \/healthcheck { auth_basic off; return 200 "ok"; }\n  location /' "$F"
+  grep -q '/healthcheck' "$F" && continue
+  awk '/^  location / && !done { print "  location = /healthcheck { auth_basic off; return 200 \"ok\"; }"; done = 1 } { print }' "$F" > "$F.tmp" && cat "$F.tmp" > "$F" && rm -f "$F.tmp"
 done
