@@ -1,6 +1,6 @@
 # Deploy and Host a Linux Desktop (Ubuntu XFCE) on Railway
 
-[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/linux-desktop?utm_medium=integration&utm_source=button&utm_campaign=linux-desktop)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/linux-desktop?referralCode=sLjDXb&utm_medium=integration&utm_source=button&utm_campaign=linux-desktop)
 
 This template runs a full Ubuntu desktop with the XFCE environment in the cloud, streamed to any device through the [linuxserver.io Webtop](https://docs.linuxserver.io/images/docker-webtop/) Selkies web interface. Open your Railway domain, log in, and you have a real Linux desktop with a terminal, file manager, browser and `sudo`. Installed packages, files and settings under the home directory persist between visits.
 
@@ -36,8 +36,8 @@ Notes and limits:
 - Idle footprint is about 250 MB, so it boots fine on the 512 MB Trial plan. Give it 1-2 GB if you run a browser or an IDE inside.
 - The virtual screen is capped at 4K (`MAX_RES=3840x2160`); the desktop still resizes to your browser window. Raising the cap costs RAM: the upstream default of 15360x8640 needs ~600 MB for the framebuffer alone.
 - No Docker daemon inside the desktop.
-- Prefer another desktop? The same author publishes [KDE Plasma](https://railway.com/deploy/linux-desktop-kde), [MATE](https://railway.com/deploy/linux-desktop-mate), [i3](https://railway.com/deploy/linux-desktop-i3), [LXQt](https://railway.com/deploy/linux-desktop-lxqt), [Arch](https://railway.com/deploy/linux-desktop-arch), [Debian](https://railway.com/deploy/linux-desktop-debian) and [Alpine](https://railway.com/deploy/linux-desktop-alpine) flavours.
-- Looking for just a browser? The same author publishes [Chromium](https://railway.com/deploy/chromium), [Google Chrome](https://railway.com/deploy/google-chrome), [Firefox](https://railway.com/deploy/firefox-browser), [Brave](https://railway.com/deploy/brave-browser) and [Microsoft Edge](https://railway.com/deploy/microsoft-edge) templates.
+- Prefer another desktop? The same author publishes [KDE Plasma](https://railway.com/deploy/linux-desktop-kde?referralCode=sLjDXb), [MATE](https://railway.com/deploy/linux-desktop-mate?referralCode=sLjDXb), [i3](https://railway.com/deploy/linux-desktop-i3?referralCode=sLjDXb), [LXQt](https://railway.com/deploy/linux-desktop-lxqt?referralCode=sLjDXb), [Arch](https://railway.com/deploy/linux-desktop-arch?referralCode=sLjDXb), [Debian](https://railway.com/deploy/linux-desktop-debian?referralCode=sLjDXb) and [Alpine](https://railway.com/deploy/linux-desktop-alpine?referralCode=sLjDXb) flavours.
+- Looking for just a browser? The same author publishes [Chromium](https://railway.com/deploy/chromium?referralCode=sLjDXb), [Google Chrome](https://railway.com/deploy/google-chrome?referralCode=sLjDXb), [Firefox](https://railway.com/deploy/firefox-browser?referralCode=sLjDXb), [Brave](https://railway.com/deploy/brave-browser?referralCode=sLjDXb) and [Microsoft Edge](https://railway.com/deploy/microsoft-edge?referralCode=sLjDXb) templates.
 
 ## Why Deploy a Linux Desktop on Railway?
 
